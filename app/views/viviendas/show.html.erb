@@ -1,0 +1,11 @@
+<div class="container">
+  <%= render @vivienda %>
+
+    <%= link_to "Back to viviendas", viviendas_path %>
+
+    <% if user_signed_in? && current_user.user? || current_user.admin?  %> |
+      <%= link_to "Edit this vivienda", edit_vivienda_path(@vivienda) %>
+      <%= button_to "Destroy this vivienda", @vivienda, method: :delete %>
+    <% end %>
+
+</div>

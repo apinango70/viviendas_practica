@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @espacio %>
+
+<div>
+  <%= link_to "Edit this espacio", edit_espacio_path(@espacio) %> |
+  <%= link_to "Back to espacios", espacios_path %>
+
+  <%= button_to "Destroy this espacio", @espacio, method: :delete %>
+</div>

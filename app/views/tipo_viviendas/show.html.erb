@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @tipo_vivienda %>
+
+<div>
+  <%= link_to "Edit this tipo vivienda", edit_tipo_vivienda_path(@tipo_vivienda) %> |
+  <%= link_to "Back to tipo viviendas", tipo_viviendas_path %>
+
+  <%= button_to "Destroy this tipo vivienda", @tipo_vivienda, method: :delete %>
+</div>

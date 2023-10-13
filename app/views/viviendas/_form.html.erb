@@ -1,0 +1,44 @@
+<%= form_with(model: vivienda) do |form| %>
+  <% if vivienda.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(vivienda.errors.count, "error") %> prohibited this vivienda from being saved:</h2>
+
+      <ul>
+        <% vivienda.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div>
+    <%= form.label :superficie, style: "display: block" %>
+    <%= form.number_field :superficie %>
+  </div>
+
+  <div>
+    <%= form.label :direccion, style: "display: block" %>
+    <%= form.text_field :direccion %>
+  </div>
+
+  <div>
+    <%= form.label :tipo_vivienda_id, style: "display: block" %>
+    <%= form.collection_select :tipo_vivienda_id, TipoVivienda.all, :id, :nombre %>
+  </div>
+
+  <div>
+    <%= form.label :espacios, style: "display: block" %>
+    <% Espacio.all.each do |espacio| %>
+      <label>
+        <%= check_box_tag "vivienda[espacio_ids][]", espacio.id, @vivienda.espacios.include?(espacio) %>
+        <%= espacio.nombre %>
+      </label>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit "Guardar" %>
+  </div>
+<% end %>

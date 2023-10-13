@@ -1,0 +1,27 @@
+<div id="<%= dom_id vivienda %>">
+  <p>
+    <strong>User:</strong>
+    <%= vivienda.user.username %>
+  </p>
+
+  <p>
+    <strong>Superficie:</strong>
+    <%= vivienda.superficie %>
+  </p>
+
+  <p>
+    <strong>Direccion:</strong>
+    <%= vivienda.direccion %>
+  </p>
+
+  <p>
+    <strong>Tipo de Vivienda:</strong>
+    <%= vivienda.tipo_vivienda.nombre %>
+  </p>
+
+<p>
+  <strong>Espacios:</strong>
+  <%= vivienda.espacios.map(&:nombre).join(', ') %>
+</p>
+
+</div>

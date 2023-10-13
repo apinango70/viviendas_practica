@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tipo viviendas</h1>
+
+<div id="tipo_viviendas">
+  <% @tipo_viviendas.each do |tipo_vivienda| %>
+    <%= render tipo_vivienda %>
+    <p>
+      <%= link_to "Show this tipo vivienda", tipo_vivienda %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New tipo vivienda", new_tipo_vivienda_path %>
